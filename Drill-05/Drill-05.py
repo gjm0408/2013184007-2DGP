@@ -3,63 +3,51 @@ import math
 
 open_canvas()
 
-grass = load_image('grass.png')
+
 character = load_image('character.png')
 
-def move_from_center_to_right():
-    x, y = 800 // 2, 90
-    while x < 800 - 25:
-        clear_canvas_now()
-        grass.draw_now(400,30)
-        character.draw_now(x,y)
-        x += 2
-        delay(0.01)
-
-def move_up():
-    x, y = 800 - 25 , 50+40
-    while x < 600 - 50:
-        clear_canvas_now()
-        grass.draw_now(400,30)
-        character.draw_now(x,y)
-        y += 2
-        delay(0.01)
-
-def move_left():
+def move_01():
     pass
 
-def move_down():
+def move_02():
     pass
 
-def move_left_to_center():
+def move_03():
     pass
 
+def move_04():
+    pass
 
-def make_rectangle():
-    move_from_center_to_right
-    move_up
-    move_left()
-    move_down()
-    move_left_to_center
+def move_05():
+    pass
 
+def move_06():
+    pass
 
+def move_07():
+    pass
 
-def make_circle():
-    cx, cy, r = 800 // 2, 600 // 2, (600-180) //2
-    degree = -90
-    while degree < 270:
-        radian = math.radians(degree)
-        x = cx + r * cos(radian)
-        y = cy + r * sin(radian)
-        clear_canvas_now()
-        grass.draw_now(400, 30)
-        character.draw_now(x, y)
-        degree += 1
-        delay(0.01)
+def move_08():
+    pass
 
+def move_09():
+    pass
+
+def move_10():
     pass
 
 while True:
-    make_rectangle()
-    make_circle()
+    move_01()
+    move_02()
+    move_03()
+    move_04()
+    move_05()
+    move_06()
+    move_07()
+    move_08()
+    move_09()
+    move_10()
+
+
 
 close_canvas()
