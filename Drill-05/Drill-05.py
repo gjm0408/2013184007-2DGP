@@ -6,8 +6,15 @@ open_canvas()
 
 character = load_image('character.png')
 
-def move_01():
+
+def move_00():
     pass
+
+def move_01():
+    x , y =203 , 535
+    clear_canvas_now()
+    character.draw_now(x,y)
+
 
 def move_02():
     pass
@@ -37,6 +44,7 @@ def move_10():
     pass
 
 while True:
+    move_00()
     move_01()
     move_02()
     move_03()
