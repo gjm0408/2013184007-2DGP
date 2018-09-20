@@ -18,14 +18,14 @@ def handle_events():
             running = False
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if event.button == SDL_BUTTON_LEFT:
-                dirx, diry = x-20, y-20
+                dirx, diry = x-25, y+25
             elif event.button == SDL_BUTTON_RIGHT:
-                dirx, diry = x-20, y-20
+                dirx, diry = x-25, y+25
         elif event.type == SDL_MOUSEBUTTONUP:
             if event.button == SDL_BUTTON_LEFT:
-                dirx, diry = x-20, y-20
+                dirx, diry = x-25, y+25
             elif event.button == SDL_BUTTON_RIGHT:
-                dirx, driy = x-20, y-20
+                dirx, driy = x-25, y+25
 
 
 
