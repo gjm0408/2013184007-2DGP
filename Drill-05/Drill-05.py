@@ -11,13 +11,21 @@ def move_00():
     pass
 
 def move_01():
-    x , y =203 , 535
+    x , y = 203 , 535
     clear_canvas_now()
     character.draw_now(x,y)
 
 
 def move_02():
-    pass
+    x , y = 203, 535
+    while x <132 or y <243:
+        clear_canvas_now()
+        character.draw_now(x,y)
+        x += 1
+        y += 1
+        delay(0.01)
+
+
 
 def move_03():
     pass
