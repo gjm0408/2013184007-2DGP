@@ -18,14 +18,14 @@ def handle_events():
             running = False
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if event.button == SDL_BUTTON_LEFT:
-                dirx = x-20
+                dirx, diry = x-20, y-20
             elif event.button == SDL_BUTTON_RIGHT:
-                driy = y-20
+                dirx, diry = x-20, y-20
         elif event.type == SDL_MOUSEBUTTONUP:
             if event.button == SDL_BUTTON_LEFT:
-                dirx = x-20
+                dirx, diry = x-20, y-20
             elif event.button == SDL_BUTTON_RIGHT:
-                driy = y-20
+                dirx, driy = x-20, y-20
 
 
 
@@ -43,8 +43,8 @@ running = True
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
 hide_cursor()
-dirx = 700
-diry = 700
+dirx = x
+diry = y
 
 
 
