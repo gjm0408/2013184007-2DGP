@@ -16,20 +16,21 @@ def handle_events():
             x,y = event.x, KPU_HEIGHT - 1 - event.y
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
-        #elif event.type == SDL_MOUSEBUTTONDOWN:
-            #if event.button == SDL_BUTTON_LEFT:
-                #dirx = x+10
-            #elif event.button == SDL_BUTTON_RIGHT:
-                #driy = y+10
-        #elif event.type == SDL_MOUSEBUTTONUP:
-            #if event.button == SDL_BUTTON_LEFT:
-             #   dirx = x - 10
-            #elif event.button == SDL_BUTTON_RIGHT:
-             #   driy = y - 10
+        elif event.type == SDL_MOUSEBUTTONDOWN:
+            if event.button == SDL_BUTTON_LEFT:
+                dirx = x-20
+            elif event.button == SDL_BUTTON_RIGHT:
+                driy = y-20
+        elif event.type == SDL_MOUSEBUTTONUP:
+            if event.button == SDL_BUTTON_LEFT:
+                dirx = x-20
+            elif event.button == SDL_BUTTON_RIGHT:
+                driy = y-20
 
 
 
-    #pass
+
+
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 
@@ -42,13 +43,19 @@ running = True
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
 hide_cursor()
-dirx = 500
-diry = 500
+dirx = 700
+diry = 700
+
+
+
+
+
 
 while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     character.clip_draw(frame * 100, 100 * 1, 100, 100, dirx, diry)
+    delay(0.01)
     hand.draw_now(x,y)
     update_canvas()
     frame = (frame + 1) % 8
