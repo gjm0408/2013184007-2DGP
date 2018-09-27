@@ -51,5 +51,6 @@ while running:
     x += dir * 5
     delay(0.05)
 
+
 close_canvas()
 

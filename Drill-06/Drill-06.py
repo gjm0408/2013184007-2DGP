@@ -5,6 +5,7 @@ KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
 def handle_events():
     global running
+
     global x,y
     global dirx
     global diry
@@ -18,14 +19,18 @@ def handle_events():
             running = False
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if event.button == SDL_BUTTON_LEFT:
+                clear_canvas()
+
+                character.clip_draw(frame * 100, 15 * 1, 100, 100, dirx, diry)
+                delay(0.01)
                 dirx, diry = x-25, y+25
-            elif event.button == SDL_BUTTON_RIGHT:
-                dirx, diry = x-25, y+25
+
         elif event.type == SDL_MOUSEBUTTONUP:
             if event.button == SDL_BUTTON_LEFT:
+
+
                 dirx, diry = x-25, y+25
-            elif event.button == SDL_BUTTON_RIGHT:
-                dirx, driy = x-25, y+25
+
 
 
 
@@ -40,11 +45,12 @@ character = load_image('animation_sheet.png')
 hand = load_image('hand_arrow.png')
 
 running = True
+
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
 hide_cursor()
-dirx = x
-diry = y
+dirx = 500
+diry = 500
 
 
 
@@ -52,17 +58,23 @@ diry = y
 
 
 while running:
+
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, dirx, diry)
+    character.clip_draw(frame * 100, 100* 1, 100, 100, dirx, diry)
     delay(0.01)
     hand.draw_now(x,y)
     update_canvas()
     frame = (frame + 1) % 8
 
 
+
     delay(0.02)
     handle_events()
+
+
+
+
 
 close_canvas()
 
