@@ -53,8 +53,6 @@ def draw_point(p):
 
 
 
-
-
 def draw_curve_5_points(p1, p2, p3, p4, p5):
     draw_big_point(p1)
     draw_big_point(p2)
