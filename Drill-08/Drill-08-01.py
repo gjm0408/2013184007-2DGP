@@ -96,8 +96,6 @@ def draw_curve_5_points(p1, p2, p3, p4, p5):
 
 
 
-
-
 prepare_turtle_canvas()
 
 
