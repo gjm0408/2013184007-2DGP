@@ -1,7 +1,6 @@
 from pico2d import *
 import random
 
-
 def handle_events():
     global running
     events = get_events()
