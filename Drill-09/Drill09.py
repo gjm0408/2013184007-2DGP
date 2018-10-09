@@ -1,7 +1,6 @@
 from pico2d import *
 import random
 
-# Game object class here
 
 def handle_events():
     global running
@@ -48,13 +47,27 @@ class B_Ball:
     def draw(self):
         self.image.draw(self.x, self.y)
     
+class S_Ball:
+    def __init__(self):
+        self.x, self.y = random.randint(50, 750), 600
+        self.image = load_image('ball21x21.png')
+        self.speed = random.randint(5,20)
+        self.choice = random.randint(0 ,1)
+
+    def update(self):
+        if(self.y > 50):
+            self.y = self.y - self.speed
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
 
 open_canvas()
 c = random.randint(0,20)
 team = [Boy() for i in range(11)]
 grass = Grass()
 Big_Ball = [B_Ball() for a in range(c)]
-#Small_Ball = [S_Ball() for b in range(20 - c)]
+Small_Ball = [S_Ball() for b in range(20 - c)]
+
 
 running = True
 
@@ -64,8 +77,8 @@ while running :
     for boy in team:
         boy.update()
 
-  # for ball in Small_Ball:
-  #      ball.update()
+    for ball in Small_Ball:
+        ball.update()
 
     for Ectball in Big_Ball:
         Ectball.update()
@@ -76,8 +89,8 @@ while running :
     for boy in team:
         boy.draw()
 
-   # for ball in Small_Ball:
-    #    ball.draw()
+    for ball in Small_Ball:
+        ball.draw()
 
     for Ectball in Big_Ball:
         Ectball.draw()
