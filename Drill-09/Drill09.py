@@ -34,6 +34,13 @@ class Grass:
     def draw(self):
         self.image.draw(400, 30)
 
+class BigBall:
+    def __init__(self):
+        self.x, self.y = random.randint(50, 750), 600
+        self.image = load_image('ball41x41.png')
+        self.speed = random.randint(5,20)
+        self.choice = random.randint(0 ,1)
+    
 
 open_canvas()
 
